@@ -1,26 +1,173 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Element styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.3s !important;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.label {
+  color: #d0d6f9;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-mobile-text-preset-6, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.4px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+h1 {
+  color: #fff;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: Bellefair;
+  font-size: var(--font-size-mobile-text-preset-1, 80px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 24px 0;
+}
+
+p {
+  color: #d0d6f9;
+  text-align: center;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: "Barlow Condensed";
+  font-size: var(--font-size-mobile-text-preset-9, 15px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+  margin: 0;
+}
+
+/* Element styles - tablet version */
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 144px;
+  }
+
+  p {
+    font-size: 16px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Element styles - Desktop version */
+
+@media (min-width: 1280px) {
+  .label {
+    text-align: left;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  p {
+    font-size: 18px;
+    text-align: left;
+  }
+}
+
+/* HP */
+/* HP - Mobile version */
+
+.container-hp {
+  background-image: url(../../public/bg-earth-mobile.jpg);
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.container-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  font-family: "Bellefair";
+  background-color: #fff;
+  border: none;
+  display: flex;
+  width: 144px;
+  height: 144px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  margin-top: 120px;
+}
+
+
+.button:hover {
+  box-shadow: 0 0 0 50px rgba(35, 37, 46, 0.9);
+  color: #C1C1C3;
+  
+}
+
+/* HP - tablet version */
+
+@media (min-width: 768px) {
+  .container-hp {
+    background-image: url(../../public/bg-earth-tablet.jpg);
+  }
+
+  h1 {
+    font-size: 144px;
+  }
+
+  .button {
+    width: 272px;
+    height: 272px;
+    font-size: 32px;
+  }
+
+  .container-hero-content-description {
+    max-width: 60%;
+  }
+
+  .button:hover {
+    box-shadow: 0 0 0 100px rgba(35, 37, 46, 0.9);
+    color: #C1C1C3;
+    
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-hero {
+    flex-direction: row;
+    margin-top: 20%;
+    gap: 300px;
+    justify-content: space-evenly;
+  }
+
+  .container-hp {
+    background-image: url(../../public/bg-earth-desktop.jpg);
+  }
+
+  .container-hero-content {
+    max-width: 540px;
+    align-items: normal;
+  }
+
+  .container-hero-content-description {
+    max-width: 100%;
+  }
 }
