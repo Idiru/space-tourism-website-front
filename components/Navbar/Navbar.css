@@ -1,0 +1,47 @@
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: "Barlow Condensed";
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.container-navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.container-desktop-menu {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container-navbar {
+    justify-content: space-around;
+  }
+
+  .container-burger-menu {
+    display: none;
+  }
+
+  .container-desktop-menu {
+    display: block;
+    font-size: 16px;
+    padding: 0 40px;
+  }
+
+  .container-desktop-menu ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+}
